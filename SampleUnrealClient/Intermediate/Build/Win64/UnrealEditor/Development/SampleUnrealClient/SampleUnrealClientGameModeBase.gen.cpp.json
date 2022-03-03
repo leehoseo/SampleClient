@@ -1,0 +1,19 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\intermediate\\build\\win64\\unrealeditor\\inc\\sampleunrealclient\\sampleunrealclientgamemodebase.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\intermediate\\build\\win64\\unrealeditor\\development\\sampleunrealclient\\definitions.sampleunrealclient.h",
+            "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\source\\sampleunrealclient\\sampleunrealclientgamemodebase.h",
+            "c:\\unrealengine\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\unrealengine\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\serverstatreplicator.generated.h",
+            "c:\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamemodebase.generated.h",
+            "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\intermediate\\build\\win64\\unrealeditor\\inc\\sampleunrealclient\\sampleunrealclientgamemodebase.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

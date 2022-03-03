@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Programming\\Server\\SampleUnreal\\SampleUnrealClient\\Source\\SampleUnrealClient\\SampleUnrealClient.Build.cs",
+		"D:\\Programming\\Server\\SampleUnreal\\SampleUnrealClient\\Source\\SampleUnrealClient.Target.cs",
+		"D:\\Programming\\Server\\SampleUnreal\\SampleUnrealClient\\Source\\SampleUnrealClientEditor.Target.cs"
+	],
+	"EngineVersion": "5.0.0"
+}

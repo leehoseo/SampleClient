@@ -1,0 +1,14 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\source\\sampleunrealclient\\sampleunrealclient.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\intermediate\\build\\win64\\unrealeditor\\development\\sampleunrealclient\\definitions.sampleunrealclient.h",
+            "d:\\programming\\server\\sampleunreal\\sampleunrealclient\\source\\sampleunrealclient\\sampleunrealclient.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Invalid|x64">
+      <Configuration>Invalid</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Program|x64">
+      <Configuration>Debug_Program</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugGame_Program|x64">
+      <Configuration>DebugGame_Program</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Development_Program|x64">
+      <Configuration>Development_Program</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test_Program|x64">
+      <Configuration>Test_Program</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping_Program|x64">
+      <Configuration>Shipping_Program</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{094C48A1-7DB9-3507-A8AB-5B108216AAD7}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <RootNamespace>UnrealMultiUserServer</RootNamespace>
+    <PlatformToolset>v142</PlatformToolset>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <NMakeUseOemCodePage>true</NMakeUseOemCodePage>
+    <TargetRuntime>Native</TargetRuntime>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Program|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Program|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Program|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_Program|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping_Program|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Invalid|x64'">
+    <NMakeBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>echo The selected platform/configuration is not valid for this target.</NMakeCleanCommandLine>
+    <NMakeOutput>Invalid Output</NMakeOutput>
+    <OutDir>C:\UnrealEngine\Engine\Intermediate\Build\Unused\</OutDir>
+    <IntDir>C:\UnrealEngine\Engine\Intermediate\Build\Unused\</IntDir>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Program|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Program|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Build.bat UnrealMultiUserServer Win64 Debug -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat UnrealMultiUserServer Win64 Debug -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Clean.bat UnrealMultiUserServer Win64 Debug -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>C:\UnrealEngine\Engine\Binaries\Win64\UnrealMultiUserServer-Win64-Debug.exe</NMakeOutput>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Program|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Program|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Build.bat UnrealMultiUserServer Win64 DebugGame -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat UnrealMultiUserServer Win64 DebugGame -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Clean.bat UnrealMultiUserServer Win64 DebugGame -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>C:\UnrealEngine\Engine\Binaries\Win64\UnrealMultiUserServer-Win64-DebugGame.exe</NMakeOutput>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development_Program|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Program|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Build.bat UnrealMultiUserServer Win64 Development -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat UnrealMultiUserServer Win64 Development -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Clean.bat UnrealMultiUserServer Win64 Development -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>C:\UnrealEngine\Engine\Binaries\Win64\UnrealMultiUserServer.exe</NMakeOutput>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test_Program|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_Program|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Build.bat UnrealMultiUserServer Win64 Test -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat UnrealMultiUserServer Win64 Test -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Clean.bat UnrealMultiUserServer Win64 Test -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>C:\UnrealEngine\Engine\Binaries\Win64\UnrealMultiUserServer-Win64-Test.exe</NMakeOutput>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping_Program|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping_Program|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
+    <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
+    <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
+    <NMakeBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Build.bat UnrealMultiUserServer Win64 Shipping -WaitMutex -FromMsBuild</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Rebuild.bat UnrealMultiUserServer Win64 Shipping -WaitMutex -FromMsBuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>C:\UnrealEngine\Engine\Build\BatchFiles\Clean.bat UnrealMultiUserServer Win64 Shipping -WaitMutex -FromMsBuild</NMakeCleanCommandLine>
+    <NMakeOutput>C:\UnrealEngine\Engine\Binaries\Win64\UnrealMultiUserServer-Win64-Shipping.exe</NMakeOutput>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NMakePreprocessorDefinitions>$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(IncludePath);C:\UnrealEngine\Engine\Source;C:\UnrealEngine\Engine\Source\Runtime\Launch\Private;C:\UnrealEngine\Engine\Source\Programs\UnrealMultiUserServer\Private;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Core;C:\UnrealEngine\Engine\Source\Runtime;C:\UnrealEngine\Engine\Source\Runtime\TraceLog\Public;C:\UnrealEngine\Engine\Source\Runtime\Core\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\TraceLog;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\CoreUObject;C:\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertMain\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Concert;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertMain\Source;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertMain\Source\Concert\Public;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertMain\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\ConcertTransport;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertMain\Source\ConcertTransport\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\MessagingCommon;C:\UnrealEngine\Engine\Source\Runtime\MessagingCommon\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Messaging;C:\UnrealEngine\Engine\Source\Runtime\Messaging\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Serialization;C:\UnrealEngine\Engine\Source\Runtime\Serialization\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Json;C:\UnrealEngine\Engine\Source\Runtime\Json\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Cbor;C:\UnrealEngine\Engine\Source\Runtime\Cbor\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\TraceInsights;C:\UnrealEngine\Engine\Source\Developer;C:\UnrealEngine\Engine\Source\Developer\TraceInsights\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\AppFramework;C:\UnrealEngine\Engine\Source\Runtime\AppFramework\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\ApplicationCore;C:\UnrealEngine\Engine\Source\Runtime\ApplicationCore\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\RHI;C:\UnrealEngine\Engine\Source\Runtime\RHI\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Slate;C:\UnrealEngine\Engine\Source\Runtime\Slate\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\InputCore;C:\UnrealEngine\Engine\Source\Runtime\InputCore\Classes;C:\UnrealEngine\Engine\Source\Runtime\InputCore\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\SlateCore;C:\UnrealEngine\Engine\Source\Runtime\SlateCore\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\ImageWrapper;C:\UnrealEngine\Engine\Source\Runtime\ImageWrapper\Public;C:\UnrealEngine\Engine\Source\ThirdParty;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\DesktopPlatform;C:\UnrealEngine\Engine\Source\Developer\DesktopPlatform\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\EditorStyle;C:\UnrealEngine\Engine\Source\Editor;C:\UnrealEngine\Engine\Source\Editor\EditorStyle\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\RenderCore;C:\UnrealEngine\Engine\Source\Runtime\RenderCore\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Sockets;C:\UnrealEngine\Engine\Source\Runtime\Sockets\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\NetCommon;C:\UnrealEngine\Engine\Source\Runtime\Net;C:\UnrealEngine\Engine\Source\Runtime\Net\Common\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\SourceCodeAccess;C:\UnrealEngine\Engine\Source\Developer\SourceCodeAccess\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Settings;C:\UnrealEngine\Engine\Source\Developer\Settings\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\TraceAnalysis;C:\UnrealEngine\Engine\Source\Developer\TraceAnalysis\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\TraceServices;C:\UnrealEngine\Engine\Source\Developer\TraceServices\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\WorkspaceMenuStructure;C:\UnrealEngine\Engine\Source\Editor\WorkspaceMenuStructure\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\XmlParser;C:\UnrealEngine\Engine\Source\Runtime\XmlParser\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Projects;C:\UnrealEngine\Engine\Source\Runtime\Projects\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\Launch;C:\UnrealEngine\Engine\Source\Runtime\Launch\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\ProfilerService;C:\UnrealEngine\Engine\Source\Developer\ProfilerService\Public;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertSync\ConcertSyncCore\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\ConcertSyncCore;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertSync\ConcertSyncCore\Source;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertSync\ConcertSyncCore\Source\ConcertSyncCore\Public;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertSync\ConcertSyncServer\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\ConcertSyncServer;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertSync\ConcertSyncServer\Source;C:\UnrealEngine\Engine\Plugins\Developer\Concert\ConcertSync\ConcertSyncServer\Source\ConcertSyncServer\Public;C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Inc\UnrealMultiUserServer;C:\UnrealEngine\Engine\Source\Programs;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;;</IncludePath>
+    <NMakeForcedIncludes>$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeAssemblySearchPath>$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="C:\UnrealEngine\Engine\Source\Programs\UnrealMultiUserServer\UnrealMultiUserServer.Target.cs"/>
+    <None Include="C:\UnrealEngine\Engine\Programs\UnrealMultiUserServer\Config\DefaultEngine.ini"/>
+    <None Include="C:\UnrealEngine\Engine\Source\Programs\UnrealMultiUserServer\UnrealMultiUserServer.Build.cs"/>
+    <ClCompile Include="C:\UnrealEngine\Engine\Source\Programs\UnrealMultiUserServer\Private\UnrealMultiUserServerMain.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\UnrealEngine\Engine\Source\ThirdParty\mimalloc\include;C:\UnrealEngine\Engine\Source\ThirdParty\LibTiff\Source\Win64;C:\UnrealEngine\Engine\Source\ThirdParty\LibTiff\Source;C:\UnrealEngine\Engine\Source\Runtime\SymsLib;C:\UnrealEngine\Engine\Source\Runtime\SymsLib\syms;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Development\UnrealMultiUserServer\Definitions.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="C:\UnrealEngine\Engine\Source\Programs\UnrealMultiUserServer\Private\UnrealMultiUserServerRun.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\UnrealEngine\Engine\Source\ThirdParty\mimalloc\include;C:\UnrealEngine\Engine\Source\ThirdParty\LibTiff\Source\Win64;C:\UnrealEngine\Engine\Source\ThirdParty\LibTiff\Source;C:\UnrealEngine\Engine\Source\Runtime\SymsLib;C:\UnrealEngine\Engine\Source\Runtime\SymsLib\syms;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\UnrealEngine\Engine\Intermediate\Build\Win64\UnrealMultiUserServer\Development\UnrealMultiUserServer\Definitions.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\UnrealEngine\Engine\Source\Programs\UnrealMultiUserServer\Private\UnrealMultiUserServerRun.h"/>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <PropertyGroup>
+    <CleanDependsOn> $(CleanDependsOn); </CleanDependsOn>
+    <CppCleanDependsOn></CppCleanDependsOn>
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

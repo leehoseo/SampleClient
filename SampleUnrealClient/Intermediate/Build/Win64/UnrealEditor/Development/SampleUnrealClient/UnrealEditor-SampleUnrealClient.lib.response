@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-SampleUnrealClient.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Programming\Server\SampleUnreal\SampleUnrealClient\Intermediate\Build\Win64\UnrealEditor\Development\SampleUnrealClient\SampleUnrealClient.cpp.obj"
+"D:\Programming\Server\SampleUnreal\SampleUnrealClient\Intermediate\Build\Win64\UnrealEditor\Development\SampleUnrealClient\SampleUnrealClientGameModeBase.cpp.obj"
+"D:\Programming\Server\SampleUnreal\SampleUnrealClient\Intermediate\Build\Win64\UnrealEditor\Development\SampleUnrealClient\SampleUnrealClient.init.gen.cpp.obj"
+"D:\Programming\Server\SampleUnreal\SampleUnrealClient\Intermediate\Build\Win64\UnrealEditor\Development\SampleUnrealClient\SampleUnrealClientGameModeBase.gen.cpp.obj"
+"..\Intermediate\Build\Win64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"D:\Programming\Server\SampleUnreal\SampleUnrealClient\Intermediate\Build\Win64\UnrealEditor\Development\SampleUnrealClient\UnrealEditor-SampleUnrealClient.lib"
