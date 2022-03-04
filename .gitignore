@@ -105,3 +105,17 @@ DerivedDataCache/*
 *.exe
 *.out
 *.app
+Build
+DerivedDataCache
+Intermediate
+Saved
+Binaries
+.vs
+*.sln
+*.VC.db
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
