@@ -13,5 +13,9 @@ UCLASS()
 class SAMPLECLIENT_API USampleGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
-	
+
+public:
+	virtual void Init();
+
+	void ConnectServer();
 };
