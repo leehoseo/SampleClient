@@ -5,7 +5,7 @@
 #include "Windows/PreWindowsApi.h"
 #endif
 
-#include "ThirdParty/CommonLib/Include/Iocp.h"
+#include "Iocp.h"
 
 class ClientIocp : public Iocp
 {

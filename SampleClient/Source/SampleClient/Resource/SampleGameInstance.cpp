@@ -3,6 +3,10 @@
 
 
 #include "SampleGameInstance.h"
+#include "ClientIocp.h"
+#include "ClientActor.h"
+#include "Dispatcher.h"
+#include "SystemManager.h"
 
 void USampleGameInstance::Init()
 {
@@ -12,21 +16,22 @@ void USampleGameInstance::Init()
 
 void USampleGameInstance::ConnectServer()
 {
-	//WSADATA w;
-	//WSAStartup(MAKEWORD(2, 2), &w);
+	WSADATA w;
+	WSAStartup(MAKEWORD(2, 2), &w);
+	SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
 
-	//SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
-	//SystemManager::getInstance()->insertAndRunThread();
+	Iocp* iocp = SystemManager::getInstance()->getIcop();
+	iocp->init();
 
-	//Iocp* iocp = SystemManager::getInstance()->getIcop();
-	//iocp->init();
+	SystemManager::getInstance()->insertAndRunThread();
 
-	////// 요건 쓰래드로 빼 말아
-	////while (true)
-	////{
-	////	iocp->execute();
-	////	Dispatcher::getInstance()->execute();
-	////}
 
-	//WSACleanup();
+	//// 요건 쓰래드로 빼 말아
+	//while (true)
+	//{
+	//	iocp->execute();
+	//	Dispatcher::getInstance()->execute();
+	//}
+
+	WSACleanup();
 }
