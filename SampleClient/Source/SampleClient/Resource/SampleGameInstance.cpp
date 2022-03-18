@@ -14,6 +14,16 @@ void USampleGameInstance::Init()
 	ConnectServer();
 }
 
+const Session_ID& USampleGameInstance::GetSessionId()
+{
+	return SessionId;
+}
+
+void USampleGameInstance::SetSessionId(const Session_ID& NewSessionId)
+{
+	SessionId = NewSessionId;
+}
+
 void USampleGameInstance::ConnectServer()
 {
 	WSADATA w;
@@ -24,14 +34,6 @@ void USampleGameInstance::ConnectServer()
 	iocp->init();
 
 	SystemManager::getInstance()->insertAndRunThread();
-
-
-	//// 요건 쓰래드로 빼 말아
-	//while (true)
-	//{
-	//	iocp->execute();
-	//	Dispatcher::getInstance()->execute();
-	//}
 
 	WSACleanup();
 }

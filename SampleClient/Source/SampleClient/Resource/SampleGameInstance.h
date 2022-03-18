@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "Base.h"
 #include "SampleGameInstance.generated.h"
 
 /**
@@ -18,4 +19,10 @@ public:
 	virtual void Init();
 
 	void ConnectServer();
+
+	const Session_ID&	GetSessionId();
+	void				SetSessionId(const Session_ID& NewSessionId);
+
+private:
+	Session_ID SessionId = undefinedSessionId;
 };
