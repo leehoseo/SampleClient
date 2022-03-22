@@ -7,33 +7,36 @@
 #include "ClientActor.h"
 #include "Dispatcher.h"
 #include "SystemManager.h"
-
+#include "TrAuth.h"
 void USampleGameInstance::Init()
 {
 	UGameInstance::Init();
-	ConnectServer();
+
+	SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
+	SystemManager::getInstance()->insertAndRunThread();
 }
 
-const Session_ID& USampleGameInstance::GetSessionId()
-{
-	return SessionId;
-}
-
-void USampleGameInstance::SetSessionId(const Session_ID& NewSessionId)
-{
-	SessionId = NewSessionId;
-}
-
-void USampleGameInstance::ConnectServer()
+void USampleGameInstance::ConnectServer(const FString& name)
 {
 	WSADATA w;
 	WSAStartup(MAKEWORD(2, 2), &w);
-	SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
 
-	Iocp* iocp = SystemManager::getInstance()->getIcop();
+	ClientIocp* iocp = static_cast<ClientIocp*>(SystemManager::getInstance()->getIcop());
 	iocp->init();
 
-	SystemManager::getInstance()->insertAndRunThread();
+	TrNetworkConnectReq req;
+	req.set(TCHAR_TO_ANSI(*name));
+	iocp->connnectServer(&req);
 
 	WSACleanup();
+}
+
+const ActorKey& USampleGameInstance::GetPlayerActorKey()
+{
+	return PlayerActorKey;
+}
+
+void USampleGameInstance::SetPlayerActorKey(const ActorKey& ActorKey)
+{
+	PlayerActorKey = ActorKey;
 }

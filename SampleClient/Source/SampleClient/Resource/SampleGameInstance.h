@@ -18,11 +18,11 @@ class SAMPLECLIENT_API USampleGameInstance : public UGameInstance
 public:
 	virtual void Init();
 
-	void ConnectServer();
+	void ConnectServer(const FString& name );
 
-	const Session_ID&	GetSessionId();
-	void				SetSessionId(const Session_ID& NewSessionId);
+	const ActorKey& GetPlayerActorKey();
+	void SetPlayerActorKey(const ActorKey& ActorKey);
 
 private:
-	Session_ID SessionId = undefinedSessionId;
+	ActorKey PlayerActorKey;
 };

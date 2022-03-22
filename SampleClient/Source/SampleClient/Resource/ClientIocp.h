@@ -7,6 +7,7 @@
 
 #include "Iocp.h"
 
+class TrNetworkConnectReq;
 class ClientIocp : public Iocp
 {
 public:
@@ -15,6 +16,7 @@ public:
 
 public:
 	virtual void init();
+	void connnectServer(TrNetworkConnectReq* tr);
 };
 
 #ifdef _WIN32

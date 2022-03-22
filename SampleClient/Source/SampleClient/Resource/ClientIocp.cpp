@@ -2,6 +2,7 @@
 #include "PoolManager.h"
 #include "Logger.h"
 #include <WS2tcpip.h>
+#include "TrAuth.h"
 
 ClientIocp::ClientIocp()
 	: Iocp(1)
@@ -14,7 +15,10 @@ void ClientIocp::init()
 {
 	_mainSession = PoolManager::getInstance()->getSessionPool().pop();
 	addSession(_mainSession);
+}
 
+void ClientIocp::connnectServer(TrNetworkConnectReq* tr)
+{
 	sockaddr_in server_addr;
 	ZeroMemory(&server_addr, sizeof(server_addr));
 
@@ -28,7 +32,6 @@ void ClientIocp::init()
 	{
 		server_addr.sin_port = htons(13480);
 		inet_pton(AF_INET, "220.74.6.41", &server_addr.sin_addr.s_addr);
-		//inet_pton(AF_INET, "127.0.0.1", &server_addr.sin_addr.s_addr);
-		connect(_mainSession, server_addr);
+		connect(_mainSession, server_addr, tr);
 	}
 }
