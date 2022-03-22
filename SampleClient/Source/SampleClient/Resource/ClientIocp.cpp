@@ -17,6 +17,10 @@ void ClientIocp::init()
 	addSession(_mainSession);
 }
 
+void ClientIocp::release()
+{
+}
+
 void ClientIocp::connnectServer(TrNetworkConnectReq* tr)
 {
 	sockaddr_in server_addr;
@@ -34,4 +38,14 @@ void ClientIocp::connnectServer(TrNetworkConnectReq* tr)
 		inet_pton(AF_INET, "220.74.6.41", &server_addr.sin_addr.s_addr);
 		connect(_mainSession, server_addr, tr);
 	}
+}
+
+void ClientIocp::onConnect()
+{
+	isConnect = true;
+}
+
+bool ClientIocp::checkConnect()
+{
+	return isConnect;
 }

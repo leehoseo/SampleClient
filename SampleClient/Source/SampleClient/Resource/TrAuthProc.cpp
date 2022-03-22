@@ -2,22 +2,24 @@
 #include "TrAuth.h"
 #include "SampleGameInstance.h"
 #include "Kismet/GameplayStatics.h"
-#include "Engine/Engine.h"
 
 #pragma optimize ("",off)
 void TrNetworkConnectAckProc::process(Tr* tr)
 {
-	TrNetworkConnectAck* ack = static_cast<TrNetworkConnectAck*>(tr);
+	TrNetworkConnectAck* Ack = static_cast<TrNetworkConnectAck*>(tr);
 
 	// 검증
 	{
 		// 뭐 스트링 그런거 하면 될듯
 	}
 
-	// Actor 생성
+	// 게임인스턴스에 기본 정보 추가
+	GetSampleGameInstance()->SetSelfPlayerActorKey(Ack->_actorKey);
 
-	USampleGameInstance* sampleGameInstance = static_cast<USampleGameInstance*>(GEngine->GetWorld()->GetGameInstance());
-	sampleGameInstance->SetPlayerActorKey(ack->_actorKey);
+	// 레벨 접속
+	// WorldContextObject 아무거나 넣어도 됨
+	// UObject로 GetWorld()를 호출하는것 말고는 없다.
+	UGameplayStatics::OpenLevel(GetSampleGameInstance(), "FirstPersonMap");
 }
 
 void TrActorLoginAckProc::process(Tr* tr)
@@ -29,11 +31,16 @@ void TrActorLoginAckProc::process(Tr* tr)
 		// 뭐 스트링 그런거 하면 될듯
 	}
 
-	// Actor 생성
-	USampleGameInstance* sampleGameInstance = static_cast<USampleGameInstance*>(GEngine->GetWorld()->GetGameInstance());
-
 	// 내가 사용할 액터 생성
-	if ( sampleGameInstance->GetPlayerActorKey() == ack->_actorKey )
+
+	UWorld* World = GetSampleGameInstance()->GetWorld();
+
+	if (nullptr == World)
+	{
+		// 에러 에러 에러
+	}
+
+	if (GetSampleGameInstance()->GetSelfPlayerActorKey() == ack->_actorKey )
 	{
 
 	}
