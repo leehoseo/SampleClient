@@ -19,11 +19,6 @@ public:
 	virtual void onConnect();
 	void release();
 	void connnectServer(TrNetworkConnectReq* tr);
-
-	bool checkConnect();
-
-private:
-	bool isConnect = false;
 };
 
 #ifdef _WIN32

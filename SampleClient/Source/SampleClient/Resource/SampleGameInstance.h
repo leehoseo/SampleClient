@@ -35,4 +35,6 @@ private:
 	ActorKey SelfPlayerActorKey = undefinedActorKey;
 
 	FDelegateHandle TickDelegateHandle;
+
+	bool IsInit = false;
 };

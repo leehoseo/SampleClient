@@ -4,7 +4,7 @@
 #include "Kismet/GameplayStatics.h"
 
 #pragma optimize ("",off)
-void TrNetworkConnectAckProc::process(Tr* tr)
+MAKE_PROCESS(TrNetworkConnectAck)
 {
 	TrNetworkConnectAck* Ack = static_cast<TrNetworkConnectAck*>(tr);
 
@@ -22,7 +22,7 @@ void TrNetworkConnectAckProc::process(Tr* tr)
 	UGameplayStatics::OpenLevel(GetSampleGameInstance(), "FirstPersonMap");
 }
 
-void TrActorLoginAckProc::process(Tr* tr)
+MAKE_PROCESS(TrActorLoginAck)
 {
 	TrActorLoginAck* ack = static_cast<TrActorLoginAck*>(tr);
 
@@ -42,7 +42,7 @@ void TrActorLoginAckProc::process(Tr* tr)
 
 	if (GetSampleGameInstance()->GetSelfPlayerActorKey() == ack->_actorKey )
 	{
-
+		
 	}
 	else // 다른 플레이어의 액터 생성
 	{

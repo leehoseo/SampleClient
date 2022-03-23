@@ -42,10 +42,4 @@ void ClientIocp::connnectServer(TrNetworkConnectReq* tr)
 
 void ClientIocp::onConnect()
 {
-	isConnect = true;
-}
-
-bool ClientIocp::checkConnect()
-{
-	return isConnect;
 }

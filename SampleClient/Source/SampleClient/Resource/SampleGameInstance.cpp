@@ -8,6 +8,7 @@
 #include "TrQueueManager.h"
 #include "NetworkContents.h"
 #include "Kismet/GameplayStatics.h"
+#include "SendEvent.h"
 
 USampleGameInstance* SampleGameInstance = nullptr;
 
@@ -18,15 +19,31 @@ USampleGameInstance* GetSampleGameInstance()
 
 void USampleGameInstance::Init()
 {
-	WSADATA w;
-	WSAStartup(MAKEWORD(2, 2), &w);
+	SampleGameInstance = this;
 
 	UGameInstance::Init();
 
-	SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
-	SystemManager::getInstance()->insertAndRunThread();
-	SampleGameInstance = this;
+	if (false == IsInit)
+	{
+		WSADATA w;
+		WSAStartup(MAKEWORD(2, 2), &w);
 
+		// 스래드On
+		SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
+		SystemManager::getInstance()->insertAndRunThread();
+
+		// 서버 연결
+		{
+			ClientIocp* iocp = static_cast<ClientIocp*>(SystemManager::getInstance()->getIcop());
+			iocp->init();
+
+			TrNetworkConnectReq req;
+			req.set();
+			iocp->connnectServer(&req);
+		}
+
+		IsInit = true;
+	}
 	// Tick등록
 	TickDelegateHandle = FTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateUObject(this, &USampleGameInstance::Tick));
 }
@@ -40,10 +57,11 @@ void USampleGameInstance::Shutdown()
 	ClientIocp* iocp = static_cast<ClientIocp*>(SystemManager::getInstance()->getIcop());
 	iocp->release();
 
-	WSACleanup();
+	// 꺼졌을때 뿐이다. 쓸 일이 없음
+	//WSACleanup();
 
 	UGameInstance::Shutdown();
-}
+}	
 
 bool USampleGameInstance::Tick(float DeltaSeconds)
 {
@@ -65,17 +83,9 @@ bool USampleGameInstance::Tick(float DeltaSeconds)
 
 void USampleGameInstance::ConnectServer(const FString& name)
 {
-	ClientIocp* iocp = static_cast<ClientIocp*>(SystemManager::getInstance()->getIcop());
-	if (true == iocp->checkConnect())
-	{
-		UGameplayStatics::OpenLevel(this, "FirstPersonMap");
-		return;
-	}
-
-	iocp->init();
-	TrNetworkConnectReq req;
+	TrActorLoginReq req;
 	req.set(TCHAR_TO_ANSI(*name));
-	iocp->connnectServer(&req);
+	makeSendEventToServer(&req, 0);
 }
 
 const ActorKey& USampleGameInstance::GetSelfPlayerActorKey()
