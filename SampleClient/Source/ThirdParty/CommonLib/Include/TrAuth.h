@@ -26,7 +26,7 @@ public:
 		_actorKey = actorKey;
 	}
 public:
-	ActorKey _actorKey = undefinedActorKey;
+	ActorKey _actorKey;
 };
 #pragma pack(pop)
 
@@ -37,13 +37,13 @@ public:
 	TrNetworkDisConnectReq() : Tr(TrId::TrNetworkDisConnectReq, ThreadType::eContents, sizeof(TrNetworkDisConnectReq)) {}
 	~TrNetworkDisConnectReq() {}
 
-	void set(const Session_ID& sessionId)
+	void set(const SessionKey& sessionKey)
 	{
 		// 검증을 넣는다.
-		_sessionId = sessionId;
+		_sessionKey = sessionKey;
 	}
 public:
-	Session_ID _sessionId = undefinedSessionId;
+	SessionKey _sessionKey;
 };
 #pragma pack(pop)
 
@@ -79,8 +79,8 @@ public:
 		_isSelfPlayer = isSelfPlayer;
 	}
 public:
-	ActorKey _actorKey = undefinedActorKey;
+	ActorKey _actorKey;
 	char _name[60] = {};
-	bool _isSelfPlayer;
+	bool _isSelfPlayer = false;
 };
 #pragma pack(pop)

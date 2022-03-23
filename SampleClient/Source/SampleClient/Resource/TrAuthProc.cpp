@@ -6,7 +6,7 @@
 #pragma optimize ("",off)
 MAKE_PROCESS(TrNetworkConnectAck)
 {
-	TrNetworkConnectAck* Ack = static_cast<TrNetworkConnectAck*>(tr);
+	//TrNetworkConnectAck* Ack = static_cast<TrNetworkConnectAck*>(tr);
 
 	// 검증
 	{
@@ -14,7 +14,7 @@ MAKE_PROCESS(TrNetworkConnectAck)
 	}
 
 	// 게임인스턴스에 기본 정보 추가
-	GetSampleGameInstance()->SetSelfPlayerActorKey(Ack->_actorKey);
+	//GetSampleGameInstance()->SetSelfPlayerActorKey(Ack->_actorKey);
 
 	// 레벨 접속
 	// WorldContextObject 아무거나 넣어도 됨
@@ -24,7 +24,7 @@ MAKE_PROCESS(TrNetworkConnectAck)
 
 MAKE_PROCESS(TrActorLoginAck)
 {
-	TrActorLoginAck* ack = static_cast<TrActorLoginAck*>(tr);
+	//TrActorLoginAck* ack = static_cast<TrActorLoginAck*>(tr);
 
 	// 검증
 	{
@@ -40,12 +40,12 @@ MAKE_PROCESS(TrActorLoginAck)
 		// 에러 에러 에러
 	}
 
-	if (GetSampleGameInstance()->GetSelfPlayerActorKey() == ack->_actorKey )
-	{
-		
-	}
-	else // 다른 플레이어의 액터 생성
-	{
+	//if (GetSampleGameInstance()->GetSelfPlayerActorKey() == ack->_actorKey )
+	//{
+	//	
+	//}
+	//else // 다른 플레이어의 액터 생성
+	//{
 
-	}
+	//}
 }

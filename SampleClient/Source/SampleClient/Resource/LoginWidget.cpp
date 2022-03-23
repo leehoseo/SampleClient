@@ -18,6 +18,6 @@ bool ULoginWidget::Initialize()
 void ULoginWidget::OnClickLogin()
 {
 	//UE_LOG(LogTemp, Warning, TEXT(EditableTextBox_ID->Text.ToString()));
-	USampleGameInstance* sampleGameInstance = Cast<USampleGameInstance>(GetWorld()->GetGameInstance());
-	sampleGameInstance->ConnectServer(EditableTextBox_ID->Text.ToString());
+	/*USampleGameInstance* sampleGameInstance = Cast<USampleGameInstance>(GetWorld()->GetGameInstance());
+	sampleGameInstance->ConnectServer(EditableTextBox_ID->Text.ToString());*/
 }

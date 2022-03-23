@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "Base.h"
+//#include "Base.h"
 #include "Tickable.h"
 #include "SampleGameInstance.generated.h"
 
@@ -25,14 +25,14 @@ public:
 
 	void ConnectServer(const FString& name );
 
-	const ActorKey& GetSelfPlayerActorKey();
-	void SetSelfPlayerActorKey(const ActorKey& ActorKey);
+	/*const ActorKey& GetSelfPlayerActorKey();
+	void SetSelfPlayerActorKey(const ActorKey& ActorKey);*/
 
 	// 여기서 메인 쓰레드 느낌으로 Tick을 사용한다.
 	bool Tick(float DeltaSeconds);
 
 private:
-	ActorKey SelfPlayerActorKey = undefinedActorKey;
+	//ActorKey SelfPlayerActorKey;
 
 	FDelegateHandle TickDelegateHandle;
 
