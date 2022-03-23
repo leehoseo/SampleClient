@@ -83,9 +83,12 @@ bool USampleGameInstance::Tick(float DeltaSeconds)
 
 void USampleGameInstance::ConnectServer(const FString& name)
 {
+	Actor* mainActor = SystemManager::getInstance()->getMainActor();
+	NetworkContents* contents = static_cast<NetworkContents*>(mainActor->getContents(ContentsType::eNetwork));
+
 	TrActorLoginReq req;
 	req.set(TCHAR_TO_ANSI(*name));
-	makeSendEventToServer(&req, 0);
+	contents->sendToServer(&req, 0);
 }
 
 const ActorKey& USampleGameInstance::GetSelfPlayerActorKey()

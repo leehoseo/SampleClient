@@ -32,7 +32,7 @@ public:
 	bool Tick(float DeltaSeconds);
 
 private:
-	ActorKey SelfPlayerActorKey = undefinedActorKey;
+	ActorKey SelfPlayerActorKey;
 
 	FDelegateHandle TickDelegateHandle;
 

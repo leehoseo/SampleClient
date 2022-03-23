@@ -62,5 +62,11 @@ public class SampleClient : ModuleRules
 
 		//PublicDefinitions.Add("WITH_MYTHIRDPARTYLIBRARY=1");
 		PublicDefinitions.Add(string.Format("WITH_COMMONLIB_BINDING={0}", isLibrarySupported ? 1 : 0));
+
+		// 아래 에러 수정용
+		// 심각도	코드	설명	프로젝트	파일	줄	비표시 오류(Suppression) 상태
+		// 오류 C4668   '_WIN32_WINNT_WIN10_RS5'은(는) 전처리기 매크로로 정의되어 있지 않으므로
+        // '#if/#elif'에 해당하는 '0'으로 바뀝니다.	SampleClient C:\Program Files(x86)\Windows Kits\10\include\10.0.19041.0\um\winioctl.h   14093
+		PublicDefinitions.Add("WIN32_LEAN_AND_MEAN");
 	}
 }
