@@ -19,7 +19,7 @@ MAKE_PROCESS(TrNetworkConnectAck)
 	// 레벨 접속
 	// WorldContextObject 아무거나 넣어도 됨
 	// UObject로 GetWorld()를 호출하는것 말고는 없다.
-	UGameplayStatics::OpenLevel(GetSampleGameInstance(), "FirstPersonMap");
+	/*UGameplayStatics::OpenLevel(GetSampleGameInstance(), "LobbyLevel");*/
 }
 
 MAKE_PROCESS(TrActorLoginAck)

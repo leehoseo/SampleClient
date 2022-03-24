@@ -2,6 +2,8 @@
 
 #define MAX_BUFFER      1024
 
+#pragma region keyDefine
+
 #define MAKE_KEY(keyName , type)													\
 class keyName																		\
 {																					\
@@ -17,6 +19,7 @@ public:																				\
 public:																				\
 	const Type& get() const { return _data; }										\
 	void clear() { _data = undefined; }												\
+	bool isValid() { return _data != undefined; }									\
 																					\
 	void operator=(keyName& ref) { _data = ref._data; }								\
 	void operator=(const keyName& ref) { _data = ref._data; }						\
@@ -27,5 +30,8 @@ private:																			\
 	Type _data = undefined;															\
 };																					\
 
+#pragma endregion
+
 MAKE_KEY(ActorKey , unsigned int)
 MAKE_KEY(SessionKey, unsigned int)
+MAKE_KEY(FieldKey, unsigned int)

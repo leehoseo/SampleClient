@@ -6,12 +6,11 @@
 #include "SystemManager.h"
 #include "TrAuth.h"
 #include "TrQueueManager.h"
-#include "NetworkContents.h"
+#include "ClientNetworkContents.h"
 #include "Kismet/GameplayStatics.h"
 #include "SendEvent.h"
 
 USampleGameInstance* SampleGameInstance = nullptr;
-
 USampleGameInstance* GetSampleGameInstance()
 {
 	return SampleGameInstance;
@@ -28,18 +27,14 @@ void USampleGameInstance::Init()
 		WSADATA w;
 		WSAStartup(MAKEWORD(2, 2), &w);
 
-		// 스래드On
 		SystemManager::getInstance()->init(new ClientActor(), new ClientIocp());
 		SystemManager::getInstance()->insertAndRunThread();
 
-		// 서버 연결
 		{
-			ClientIocp* iocp = static_cast<ClientIocp*>(SystemManager::getInstance()->getIcop());
-			iocp->init();
+			Actor* mainActor = SystemManager::getInstance()->getMainActor();
+			ClientNetworkContents* contents = static_cast<ClientNetworkContents*>(mainActor->getContents(ContentsType::eNetwork));
 
-			TrNetworkConnectReq req;
-			req.set();
-			iocp->connnectServer(&req);
+			contents->requestConnectToServer();
 		}
 
 		IsInit = true;
@@ -48,17 +43,16 @@ void USampleGameInstance::Init()
 	TickDelegateHandle = FTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateUObject(this, &USampleGameInstance::Tick));
 }
 
-
 void USampleGameInstance::Shutdown()
 {
 	// Unregister ticker delegate
 	FTicker::GetCoreTicker().RemoveTicker(TickDelegateHandle);
 
-	ClientIocp* iocp = static_cast<ClientIocp*>(SystemManager::getInstance()->getIcop());
-	iocp->release();
+	Actor* mainActor = SystemManager::getInstance()->getMainActor();
+	ClientNetworkContents* contents = static_cast<ClientNetworkContents*>(mainActor->getContents(ContentsType::eNetwork));
 
-	// 꺼졌을때 뿐이다. 쓸 일이 없음
-	//WSACleanup();
+	contents->requestDisConnectFromServer();
+	WSACleanup();
 
 	UGameInstance::Shutdown();
 }	
@@ -86,9 +80,9 @@ void USampleGameInstance::ConnectServer(const FString& name)
 	Actor* mainActor = SystemManager::getInstance()->getMainActor();
 	NetworkContents* contents = static_cast<NetworkContents*>(mainActor->getContents(ContentsType::eNetwork));
 
-	TrActorLoginReq req;
-	req.set(TCHAR_TO_ANSI(*name));
-	contents->sendToServer(&req, 0);
+	TrActorLoginReq* req = new TrActorLoginReq();
+	req->set(TCHAR_TO_ANSI(*name));
+	contents->sendToServer(req, 0);
 }
 
 const ActorKey& USampleGameInstance::GetSelfPlayerActorKey()
